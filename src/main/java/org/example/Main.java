@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 
 public class Main {
@@ -16,11 +17,14 @@ public class Main {
             // Verify page title
             String expectedPageTitle = "Welcome: Mercury Tours";
             String actualPageTitle = driver.getTitle();
-            if (expectedPageTitle.contains(actualPageTitle)) {
+            /*if (expectedPageTitle.contains(actualPageTitle)) {
                 System.out.println("Test is pass");
             } else {
                 System.out.println("Test is fail");
-            }
+            }*/
+        Assert.assertTrue(expectedPageTitle.contains(actualPageTitle), "Page title test failed. Expected: " + expectedPageTitle + ", but got: " + actualPageTitle);
+
+
 
             //Login Page
             WebElement userNameTextField = driver.findElement(By.name("userName"));
@@ -34,12 +38,14 @@ public class Main {
             String actualSuccessMessageHeadingText = successMessageHeading.getText();
             String expectedSuccessMessageHeadingText = "Login Successfully";
 
-            if (actualSuccessMessageHeadingText.contains(expectedSuccessMessageHeadingText)) {
+           /* if (actualSuccessMessageHeadingText.contains(expectedSuccessMessageHeadingText)) {
                 System.out.println("Success message is matched.Test is pass");
             } else {
                 System.out.println("Success message is not matched.Test is fail");
             }
-
+        System.out.println("Login Test is pass");
+*/
+        Assert.assertTrue(actualSuccessMessageHeadingText.contains(expectedSuccessMessageHeadingText), "test failed. Expected: " + expectedSuccessMessageHeadingText + ", but got: " + actualSuccessMessageHeadingText);
 
         driver.quit();
 
