@@ -17,11 +17,7 @@ public class Main {
             // Verify page title
             String expectedPageTitle = "Welcome: Mercury Tours";
             String actualPageTitle = driver.getTitle();
-            /*if (expectedPageTitle.contains(actualPageTitle)) {
-                System.out.println("Test is pass");
-            } else {
-                System.out.println("Test is fail");
-            }*/
+
         Assert.assertTrue(expectedPageTitle.contains(actualPageTitle), "Page title test failed. Expected: " + expectedPageTitle + ", but got: " + actualPageTitle);
 
 
