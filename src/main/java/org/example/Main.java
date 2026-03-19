@@ -15,7 +15,7 @@ public class Main {
             driver.get("https://demo.guru99.com/test/newtours/");
 
             // Verify page title
-            String expectedPageTitle = "Welcome: Mercury Tours";
+            String expectedPageTitle = "Welcome: Mercury ABC";
             String actualPageTitle = driver.getTitle();
 
         Assert.assertTrue(expectedPageTitle.contains(actualPageTitle), "Page title test failed. Expected: " + expectedPageTitle + ", but got: " + actualPageTitle);
